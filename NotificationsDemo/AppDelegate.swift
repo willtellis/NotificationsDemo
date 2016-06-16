@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    static let actionIdOk = "actionIdOk"
+    static let notificationId = "notificationId"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -44,3 +47,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    
+    func registorForNotifications() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization([.alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        
+        let actionOptions = UNNotificationActionOptions.foreground
+        let action = UNNotificationAction(identifier: AppDelegate.actionIdOk, title: "Ok", options: actionOptions)
+        let categoryOptions = UNNotificationCategoryOptions(rawValue: 0)
+        let category = UNNotificationCategory(identifier: AppDelegate.notificationId, actions: [action], minimalActions: [action], intentIdentifiers: [], options: categoryOptions)
+        center.setNotificationCategories(Set([category]))
+    }
+}
