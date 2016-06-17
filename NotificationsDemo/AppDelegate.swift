@@ -12,13 +12,14 @@ import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var shouldShowImage = false
+    
     var window: UIWindow?
 
-    static let actionIdOk = "actionIdOk"
-    static let notificationId = "notificationId"
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        registorForNotifications()
+        
         return true
     }
 
@@ -54,11 +55,44 @@ extension AppDelegate {
         center.requestAuthorization([.alert, .sound]) { (granted, error) in
             // Enable or disable features based on authorization.
         }
+        center.delegate = self
         
-        let actionOptions = UNNotificationActionOptions.foreground
-        let action = UNNotificationAction(identifier: AppDelegate.actionIdOk, title: "Ok", options: actionOptions)
+        let actionWaddup = UNNotificationAction(identifier: ActionType.waddup.rawValue, title: "Waddup", options: [.foreground])
         let categoryOptions = UNNotificationCategoryOptions(rawValue: 0)
-        let category = UNNotificationCategory(identifier: AppDelegate.notificationId, actions: [action], minimalActions: [action], intentIdentifiers: [], options: categoryOptions)
+        let category = UNNotificationCategory(identifier: NotificationType.notification.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
         center.setNotificationCategories(Set([category]))
+        
+    }
+    
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -> Void) {
+        guard let action = ActionType(rawValue: response.actionIdentifier) else {
+            completionHandler()
+            return
+        }
+        
+        switch action {
+        case .waddup:
+            if let viewController = window?.rootViewController as? ViewController {
+                viewController.showImage()
+            }
+            else {
+                shouldShowImage = true
+            }
+            completionHandler()
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert])
+    }
+}
+
+extension AppDelegate: DatBoiProtocol {
+    func datBoiIsComing() -> Bool {
+        return shouldShowImage
     }
 }
