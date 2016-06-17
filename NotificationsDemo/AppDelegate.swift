@@ -59,8 +59,9 @@ extension AppDelegate {
         
         let actionWaddup = UNNotificationAction(identifier: ActionType.waddup.rawValue, title: "Waddup", options: [.foreground])
         let categoryOptions = UNNotificationCategoryOptions(rawValue: 0)
-        let category = UNNotificationCategory(identifier: NotificationType.notification.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
-        center.setNotificationCategories(Set([category]))
+        let simpleCategory = UNNotificationCategory(identifier: NotificationType.simpleNotification.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+        let richCategory = UNNotificationCategory(identifier: NotificationType.richNotification.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+        center.setNotificationCategories(Set([simpleCategory, richCategory]))
         
     }
     

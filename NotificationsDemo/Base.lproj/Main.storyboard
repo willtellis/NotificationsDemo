@@ -30,6 +30,12 @@
                                     <action selector="hideImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AaX-lt-3Ej"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79R-Zx-v11">
+                                <state key="normal" title="Send Rich Notification"/>
+                                <connections>
+                                    <action selector="sendRichNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nvu-jj-bz6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -41,6 +47,8 @@
                             <constraint firstItem="nWz-gD-r4C" firstAttribute="leading" secondItem="8o9-ZO-bdV" secondAttribute="leading" id="TRz-Gv-ijN"/>
                             <constraint firstItem="8o9-ZO-bdV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="a2t-xv-m2t"/>
                             <constraint firstAttribute="trailing" secondItem="8o9-ZO-bdV" secondAttribute="trailing" constant="16" id="keO-L2-LzE"/>
+                            <constraint firstItem="79R-Zx-v11" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rBN-45-ipk"/>
+                            <constraint firstItem="79R-Zx-v11" firstAttribute="top" secondItem="XDd-ut-0a8" secondAttribute="bottom" constant="7.5" id="rtB-9L-2rL"/>
                             <constraint firstItem="XDd-ut-0a8" firstAttribute="top" secondItem="8o9-ZO-bdV" secondAttribute="bottom" constant="8" id="tNc-b6-96H"/>
                             <constraint firstItem="8o9-ZO-bdV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="w6w-vH-TP2"/>
                         </constraints>

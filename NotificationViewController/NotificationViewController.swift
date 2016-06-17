@@ -23,6 +23,8 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     func didReceive(_ notification: UNNotification) {
         self.label?.text = notification.request.content.body
         
+        
+        
         URLSession.getImage(atURL: MediaType.datBoi.url()!) { [weak self] (data, error) in
             if let _ = error {
                 return

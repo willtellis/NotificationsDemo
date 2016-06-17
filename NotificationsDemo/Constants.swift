@@ -9,7 +9,8 @@
 import Foundation
 
 enum NotificationType: String {
-    case notification = "notificationId"
+    case simpleNotification = "simpleNotificationId"
+    case richNotification = "notificationId"
 }
 
 enum ActionType: String {

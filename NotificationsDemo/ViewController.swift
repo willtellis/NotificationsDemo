@@ -60,6 +60,14 @@ extension ViewController {
     }
 
     @IBAction func sendNotification(_ sender: UIButton) {
+        sendNotification(rich: false)
+    }
+
+    @IBAction func sendRichNotification(_ sender: UIButton) {
+        sendNotification(rich: true)
+    }
+    
+    func sendNotification(rich:Bool) {
         let center = UNUserNotificationCenter.current()
         
         let notificationRequestId = "notificationRequestId"
@@ -74,10 +82,10 @@ extension ViewController {
             }
             
             let content = UNMutableNotificationContent()
-            content.title = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
-            content.body = NSString.localizedUserNotificationString(forKey: "Hi there!", arguments: nil)
+            content.title = NSString.localizedUserNotificationString(forKey: "Oh snap!", arguments: nil)
+            content.body = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
             content.sound = UNNotificationSound.default()
-            content.categoryIdentifier = NotificationType.notification.rawValue
+            content.categoryIdentifier = rich ? NotificationType.richNotification.rawValue : NotificationType.simpleNotification.rawValue
             if let attachment = attachment {
                 content.attachments = [attachment]
             }
