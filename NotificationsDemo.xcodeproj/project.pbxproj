@@ -20,6 +20,8 @@
 		785CDD491D13C7BF00B4CDF3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 785CDD471D13C7BF00B4CDF3 /* MainInterface.storyboard */; };
 		785CDD4D1D13C7BF00B4CDF3 /* NotificationViewController.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 785CDD3E1D13C7BF00B4CDF3 /* NotificationViewController.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		785CDD521D14634400B4CDF3 /* URLSession+NotificationsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CDD511D14634400B4CDF3 /* URLSession+NotificationsDemo.swift */; };
+		785CDD531D1475A300B4CDF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CDD371D13947F00B4CDF3 /* Constants.swift */; };
+		785CDD541D1475BE00B4CDF3 /* URLSession+NotificationsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CDD511D14634400B4CDF3 /* URLSession+NotificationsDemo.swift */; };
 		787D119C1D12FEAC009A7819 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D119B1D12FEAC009A7819 /* NotificationService.swift */; };
 		787D11A01D12FEAC009A7819 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 787D11991D12FEAC009A7819 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -320,6 +322,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				785CDD461D13C7BF00B4CDF3 /* NotificationViewController.swift in Sources */,
+				785CDD531D1475A300B4CDF3 /* Constants.swift in Sources */,
+				785CDD541D1475BE00B4CDF3 /* URLSession+NotificationsDemo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +570,7 @@
 				785CDD501D13C7C000B4CDF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		787D11A31D12FEAD009A7819 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
 			isa = XCConfigurationList;

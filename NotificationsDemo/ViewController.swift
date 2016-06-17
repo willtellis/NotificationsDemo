@@ -74,7 +74,7 @@ extension ViewController {
             }
             
             let content = UNMutableNotificationContent()
-            content.title = NSString.localizedUserNotificationString(forKey: "Hello!", arguments: nil)
+            content.title = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
             content.body = NSString.localizedUserNotificationString(forKey: "Hi there!", arguments: nil)
             content.sound = UNNotificationSound.default()
             content.categoryIdentifier = NotificationType.notification.rawValue

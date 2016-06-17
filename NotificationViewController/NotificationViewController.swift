@@ -13,6 +13,7 @@ import UserNotificationsUI
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
 
     @IBOutlet var label: UILabel?
+    @IBOutlet var imageView: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +21,21 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
     
     func didReceive(_ notification: UNNotification) {
-        print("*************HERE**************")
         self.label?.text = notification.request.content.body
         
+        URLSession.getImage(atURL: MediaType.datBoi.url()!) { [weak self] (data, error) in
+            if let _ = error {
+                return
+            }
+            guard let data = data else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.imageView?.image = UIImage(data: data)
+                self?.imageView?.isHidden = false
+            }
+        }
+
     }
 
 }
