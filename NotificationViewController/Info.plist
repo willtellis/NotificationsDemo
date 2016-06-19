@@ -29,7 +29,7 @@
 			<key>UNNotificationExtensionDefaultContentHidden</key>
 			<true/>
 			<key>UNNotificationExtensionCategory</key>
-			<string>notificationId</string>
+			<string>notificationContentExtensionId</string>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
 			<real>0.5</real>
 		</dict>

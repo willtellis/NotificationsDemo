@@ -13,7 +13,6 @@
 		785315C51D10312700549478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785315C41D10312700549478 /* Assets.xcassets */; };
 		785315C81D10312700549478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 785315C61D10312700549478 /* LaunchScreen.storyboard */; };
 		785CDD381D13947F00B4CDF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CDD371D13947F00B4CDF3 /* Constants.swift */; };
-		785CDD391D13AF1C00B4CDF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CDD371D13947F00B4CDF3 /* Constants.swift */; };
 		785CDD411D13C7BF00B4CDF3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785CDD401D13C7BF00B4CDF3 /* UserNotifications.framework */; };
 		785CDD431D13C7BF00B4CDF3 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785CDD421D13C7BF00B4CDF3 /* UserNotificationsUI.framework */; };
 		785CDD461D13C7BF00B4CDF3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CDD451D13C7BF00B4CDF3 /* NotificationViewController.swift */; };
@@ -22,8 +21,10 @@
 		785CDD521D14634400B4CDF3 /* URLSession+NotificationsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CDD511D14634400B4CDF3 /* URLSession+NotificationsDemo.swift */; };
 		785CDD531D1475A300B4CDF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CDD371D13947F00B4CDF3 /* Constants.swift */; };
 		785CDD541D1475BE00B4CDF3 /* URLSession+NotificationsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785CDD511D14634400B4CDF3 /* URLSession+NotificationsDemo.swift */; };
-		787D119C1D12FEAC009A7819 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D119B1D12FEAC009A7819 /* NotificationService.swift */; };
-		787D11A01D12FEAC009A7819 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 787D11991D12FEAC009A7819 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		78F606841D175462003E72B1 /* datboi.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F606821D175462003E72B1 /* datboi.gif */; };
+		78F606851D175462003E72B1 /* datboi.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F606821D175462003E72B1 /* datboi.gif */; };
+		78F606861D175462003E72B1 /* datboi.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F606831D175462003E72B1 /* datboi.png */; };
+		78F606871D175462003E72B1 /* datboi.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F606831D175462003E72B1 /* datboi.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +34,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 785CDD3D1D13C7BF00B4CDF3;
 			remoteInfo = NotificationViewController;
-		};
-		787D119E1D12FEAC009A7819 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 785315B21D10312700549478 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 787D11981D12FEAC009A7819;
-			remoteInfo = NotificationService;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,7 +45,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				785CDD4D1D13C7BF00B4CDF3 /* NotificationViewController.appex in Embed App Extensions */,
-				787D11A01D12FEAC009A7819 /* NotificationService.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,9 +67,8 @@
 		785CDD481D13C7BF00B4CDF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		785CDD4A1D13C7BF00B4CDF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		785CDD511D14634400B4CDF3 /* URLSession+NotificationsDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+NotificationsDemo.swift"; sourceTree = "<group>"; };
-		787D11991D12FEAC009A7819 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		787D119B1D12FEAC009A7819 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		787D119D1D12FEAC009A7819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78F606821D175462003E72B1 /* datboi.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = datboi.gif; path = NotificationsDemo/datboi.gif; sourceTree = "<group>"; };
+		78F606831D175462003E72B1 /* datboi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = datboi.png; path = NotificationsDemo/datboi.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,21 +88,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		787D11961D12FEAC009A7819 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		785315B11D10312700549478 = {
 			isa = PBXGroup;
 			children = (
+				78F6067D1D174018003E72B1 /* Resources */,
 				785315BC1D10312700549478 /* NotificationsDemo */,
-				787D119A1D12FEAC009A7819 /* NotificationService */,
 				785CDD441D13C7BF00B4CDF3 /* NotificationViewController */,
 				785CDD3F1D13C7BF00B4CDF3 /* Frameworks */,
 				785315BB1D10312700549478 /* Products */,
@@ -121,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				785315BA1D10312700549478 /* NotificationsDemo.app */,
-				787D11991D12FEAC009A7819 /* NotificationService.appex */,
 				785CDD3E1D13C7BF00B4CDF3 /* NotificationViewController.appex */,
 			);
 			name = Products;
@@ -161,13 +145,13 @@
 			path = NotificationViewController;
 			sourceTree = "<group>";
 		};
-		787D119A1D12FEAC009A7819 /* NotificationService */ = {
+		78F6067D1D174018003E72B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				787D119B1D12FEAC009A7819 /* NotificationService.swift */,
-				787D119D1D12FEAC009A7819 /* Info.plist */,
+				78F606821D175462003E72B1 /* datboi.gif */,
+				78F606831D175462003E72B1 /* datboi.png */,
 			);
-			path = NotificationService;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +169,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				787D119F1D12FEAC009A7819 /* PBXTargetDependency */,
 				785CDD4C1D13C7BF00B4CDF3 /* PBXTargetDependency */,
 			);
 			name = NotificationsDemo;
@@ -210,23 +193,6 @@
 			productReference = 785CDD3E1D13C7BF00B4CDF3 /* NotificationViewController.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		787D11981D12FEAC009A7819 /* NotificationService */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 787D11A31D12FEAD009A7819 /* Build configuration list for PBXNativeTarget "NotificationService" */;
-			buildPhases = (
-				787D11951D12FEAC009A7819 /* Sources */,
-				787D11961D12FEAC009A7819 /* Frameworks */,
-				787D11971D12FEAC009A7819 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NotificationService;
-			productName = NotificationService;
-			productReference = 787D11991D12FEAC009A7819 /* NotificationService.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -249,12 +215,6 @@
 						DevelopmentTeamName = "Will Ellis (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
-					787D11981D12FEAC009A7819 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 7385526RHE;
-						DevelopmentTeamName = "Will Ellis (Personal Team)";
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 785315B51D10312700549478 /* Build configuration list for PBXProject "NotificationsDemo" */;
@@ -271,7 +231,6 @@
 			projectRoot = "";
 			targets = (
 				785315B91D10312700549478 /* NotificationsDemo */,
-				787D11981D12FEAC009A7819 /* NotificationService */,
 				785CDD3D1D13C7BF00B4CDF3 /* NotificationViewController */,
 			);
 		};
@@ -283,7 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				785315C81D10312700549478 /* LaunchScreen.storyboard in Resources */,
+				78F606841D175462003E72B1 /* datboi.gif in Resources */,
 				785315C51D10312700549478 /* Assets.xcassets in Resources */,
+				78F606861D175462003E72B1 /* datboi.png in Resources */,
 				785315C31D10312700549478 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,13 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				785CDD491D13C7BF00B4CDF3 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		787D11971D12FEAC009A7819 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				78F606851D175462003E72B1 /* datboi.gif in Resources */,
+				78F606871D175462003E72B1 /* datboi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,15 +283,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		787D11951D12FEAC009A7819 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				787D119C1D12FEAC009A7819 /* NotificationService.swift in Sources */,
-				785CDD391D13AF1C00B4CDF3 /* Constants.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -343,11 +290,6 @@
 			isa = PBXTargetDependency;
 			target = 785CDD3D1D13C7BF00B4CDF3 /* NotificationViewController */;
 			targetProxy = 785CDD4B1D13C7BF00B4CDF3 /* PBXContainerItemProxy */;
-		};
-		787D119F1D12FEAC009A7819 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 787D11981D12FEAC009A7819 /* NotificationService */;
-			targetProxy = 787D119E1D12FEAC009A7819 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -518,30 +460,6 @@
 			};
 			name = Release;
 		};
-		787D11A11D12FEAD009A7819 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = NotificationService/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.NotificationsDemo.NotificationService;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		787D11A21D12FEAD009A7819 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = NotificationService/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.NotificationsDemo.NotificationService;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -568,15 +486,6 @@
 			buildConfigurations = (
 				785CDD4F1D13C7C000B4CDF3 /* Debug */,
 				785CDD501D13C7C000B4CDF3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		787D11A31D12FEAD009A7819 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				787D11A11D12FEAD009A7819 /* Debug */,
-				787D11A21D12FEAD009A7819 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

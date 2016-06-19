@@ -35,7 +35,7 @@ class ViewController: UIViewController {
             imageView.isHidden = false
             return
         }
-        URLSession.getImage(atURL: MediaType.datBoi.url()!) { [weak self] (data, error) in
+        URLSession.getImage(atURL: MediaType.datBoiFullRemote.url()) { [weak self] (data, error) in
             if let _ = error {
                 return
             }
@@ -60,23 +60,38 @@ extension ViewController {
     }
 
     @IBAction func sendNotification(_ sender: UIButton) {
-        sendNotification(rich: false)
+        let center = UNUserNotificationCenter.current()
+        
+        let notificationRequestId = "notificationRequestId"
+        let notificationContent = { () -> UNMutableNotificationContent in
+            
+            let content = UNMutableNotificationContent()
+            content.title = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
+            content.body = NSString.localizedUserNotificationString(forKey: "Oh snap!", arguments: nil)
+            content.sound = UNNotificationSound.default()
+            content.categoryIdentifier = NotificationType.plain.rawValue
+            return content
+        }()
+        
+        let notificationRequest = UNNotificationRequest(identifier: notificationRequestId, content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false))
+        center.add(notificationRequest) { (error) in
+            if let error = error {
+                print("\(error)")
+            }
+        }
     }
 
-    @IBAction func sendRichNotification(_ sender: UIButton) {
-        sendNotification(rich: true)
-    }
-    
-    func sendNotification(rich:Bool) {
+    @IBAction func sendNotificationToServiceExtension(_ sender: UIButton) {
         let center = UNUserNotificationCenter.current()
         
         let notificationRequestId = "notificationRequestId"
         let notificationAttachmentId = "notificationAttachmentId"
         
         let notificationContent = { () -> UNMutableNotificationContent in
+            
             let attachment: UNNotificationAttachment?
             do {
-                attachment = try UNNotificationAttachment(identifier: notificationAttachmentId, url: MediaType.datBoi.appUrl(), options: nil)
+                attachment = try UNNotificationAttachment(identifier: notificationAttachmentId, url: MediaType.datBoiFullLocal.url(), options: nil)
             } catch {
                 attachment = nil
             }
@@ -85,7 +100,75 @@ extension ViewController {
             content.title = NSString.localizedUserNotificationString(forKey: "Oh snap!", arguments: nil)
             content.body = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
             content.sound = UNNotificationSound.default()
-            content.categoryIdentifier = rich ? NotificationType.richNotification.rawValue : NotificationType.simpleNotification.rawValue
+            content.categoryIdentifier = NotificationType.serviceExtension.rawValue
+            if let attachment = attachment {
+                content.attachments = [attachment]
+            }
+            return content
+        }()
+        
+        let notificationRequest = UNNotificationRequest(identifier: notificationRequestId, content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false))
+        center.add(notificationRequest) { (error) in
+            if let error = error {
+                print("\(error)")
+            }
+        }
+    }
+    
+    @IBAction func sendNotificationToContentExtension(_ sender: UIButton) {
+        let center = UNUserNotificationCenter.current()
+        
+        let notificationRequestId = "notificationRequestId"
+        let notificationAttachmentId = "notificationAttachmentId"
+        
+        let notificationContent = { () -> UNMutableNotificationContent in
+            
+            let attachment: UNNotificationAttachment?
+            do {
+                attachment = try UNNotificationAttachment(identifier: notificationAttachmentId, url: MediaType.datBoiFullLocal.url(), options: nil)
+            } catch {
+                attachment = nil
+            }
+            
+            let content = UNMutableNotificationContent()
+            content.title = NSString.localizedUserNotificationString(forKey: "Oh snap!", arguments: nil)
+            content.body = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
+            content.sound = UNNotificationSound.default()
+            content.categoryIdentifier = NotificationType.contentExtension.rawValue
+            if let attachment = attachment {
+                content.attachments = [attachment]
+            }
+            return content
+        }()
+        
+        let notificationRequest = UNNotificationRequest(identifier: notificationRequestId, content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false))
+        center.add(notificationRequest) { (error) in
+            if let error = error {
+                print("\(error)")
+            }
+        }
+    }
+    
+    func send(notificationType: NotificationType) {
+        let center = UNUserNotificationCenter.current()
+        
+        let notificationRequestId = "notificationRequestId"
+        let notificationAttachmentId = "notificationAttachmentId"
+        
+        let notificationContent = { () -> UNMutableNotificationContent in
+            
+            let attachment: UNNotificationAttachment?
+            do {
+                attachment = try UNNotificationAttachment(identifier: notificationAttachmentId, url: MediaType.datBoiFullLocal.url(), options: nil)
+            } catch {
+                attachment = nil
+            }
+            
+            let content = UNMutableNotificationContent()
+            content.title = NSString.localizedUserNotificationString(forKey: "Oh snap!", arguments: nil)
+            content.body = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
+            content.sound = UNNotificationSound.default()
+            content.categoryIdentifier = notificationType.rawValue
             if let attachment = attachment {
                 content.attachments = [attachment]
             }

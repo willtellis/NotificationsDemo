@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     
+        
     func registorForNotifications() {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization([.alert, .sound]) { (granted, error) in
@@ -59,9 +60,10 @@ extension AppDelegate {
         
         let actionWaddup = UNNotificationAction(identifier: ActionType.waddup.rawValue, title: "Waddup", options: [.foreground])
         let categoryOptions = UNNotificationCategoryOptions(rawValue: 0)
-        let simpleCategory = UNNotificationCategory(identifier: NotificationType.simpleNotification.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
-        let richCategory = UNNotificationCategory(identifier: NotificationType.richNotification.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
-        center.setNotificationCategories(Set([simpleCategory, richCategory]))
+        let plainCategory = UNNotificationCategory(identifier: NotificationType.plain.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+        let serviceExtensionCategory = UNNotificationCategory(identifier: NotificationType.serviceExtension.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+        let contentExtensionCategory = UNNotificationCategory(identifier: NotificationType.contentExtension.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+        center.setNotificationCategories(Set([plainCategory, serviceExtensionCategory, contentExtensionCategory]))
         
     }
     

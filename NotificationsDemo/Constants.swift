@@ -9,35 +9,41 @@
 import Foundation
 
 enum NotificationType: String {
-    case simpleNotification = "simpleNotificationId"
-    case richNotification = "notificationId"
+    case plain = "notificationPlainId"
+    case serviceExtension = "notificationServiceExtensionId"
+    case contentExtension = "notificationContentExtensionId"
 }
 
 enum ActionType: String {
     case waddup = "actionIdWaddup"
 }
 
-enum MediaType: String {
-    case datBoi = "demo://datboi"
+enum MediaType {
+    case datBoiThumbnail
+    case datBoiFullLocal
+    case datBoiFullRemote
     
-    init?(appUrl: URL) {
-        guard let urlString = appUrl.absoluteString, let mediaType = MediaType(rawValue: urlString) else {
+    init?(url: URL) {
+        switch url {
+        case MediaType.datBoiThumbnail.url():
+            self = .datBoiThumbnail
+        case MediaType.datBoiFullLocal.url():
+            self = .datBoiFullLocal
+        case MediaType.datBoiFullRemote.url():
+            self = .datBoiFullRemote
+        default:
             return nil
         }
-        self = mediaType
     }
     
-    func appUrl() -> URL {
+    func url() -> URL {
         switch self {
-        case .datBoi:
-            return URL(string: MediaType.datBoi.rawValue)!
-        }
-    }
-    
-    func url() -> URL?{
-        switch self {
-        case .datBoi:
-            return URL(string: "https://i.giphy.com/yDTWAecZcB2Jq.gif")
+        case .datBoiThumbnail:
+            return Bundle.main().urlForResource("datboi", withExtension: "png")!
+        case .datBoiFullLocal:
+            return Bundle.main().urlForResource("datboi", withExtension: "gif")!
+        case .datBoiFullRemote:
+            return URL(string: "https://i.giphy.com/yDTWAecZcB2Jq.gif")!
         }
     }
 }

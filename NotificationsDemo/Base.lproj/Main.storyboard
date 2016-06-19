@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-ut-0a8">
-                                <state key="normal" title="Send Notification"/>
+                                <state key="normal" title="Send Plain Notification"/>
                                 <connections>
                                     <action selector="sendNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WX7-0W-qm4"/>
                                 </connections>
@@ -30,25 +30,34 @@
                                     <action selector="hideImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AaX-lt-3Ej"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79R-Zx-v11">
-                                <state key="normal" title="Send Rich Notification"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqO-VQ-2FP">
+                                <state key="normal" title="Send Notification to Service Extension"/>
                                 <connections>
-                                    <action selector="sendRichNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nvu-jj-bz6"/>
+                                    <action selector="sendNotificationToServiceExtension:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nG4-QA-FDF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79R-Zx-v11">
+                                <state key="normal" title="Send Notification to Content Extension"/>
+                                <connections>
+                                    <action selector="sendNotificationToContentExtension:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d6p-RX-jqc"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nWz-gD-r4C" firstAttribute="trailing" secondItem="8o9-ZO-bdV" secondAttribute="trailing" id="1lp-Fz-Wdo"/>
+                            <constraint firstItem="79R-Zx-v11" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9gP-Eu-IqJ"/>
                             <constraint firstItem="nWz-gD-r4C" firstAttribute="top" secondItem="8o9-ZO-bdV" secondAttribute="top" id="Ceb-aV-jNP"/>
                             <constraint firstItem="XDd-ut-0a8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EXR-Rt-TSx"/>
                             <constraint firstItem="nWz-gD-r4C" firstAttribute="bottom" secondItem="8o9-ZO-bdV" secondAttribute="bottom" id="J4n-vh-CZa"/>
                             <constraint firstItem="XDd-ut-0a8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KNn-j7-Ydd"/>
+                            <constraint firstItem="79R-Zx-v11" firstAttribute="top" secondItem="DqO-VQ-2FP" secondAttribute="bottom" constant="8" id="P4X-NI-G0a"/>
                             <constraint firstItem="nWz-gD-r4C" firstAttribute="leading" secondItem="8o9-ZO-bdV" secondAttribute="leading" id="TRz-Gv-ijN"/>
                             <constraint firstItem="8o9-ZO-bdV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="a2t-xv-m2t"/>
+                            <constraint firstItem="DqO-VQ-2FP" firstAttribute="top" secondItem="XDd-ut-0a8" secondAttribute="bottom" constant="7.5" id="hDd-i3-vkb"/>
                             <constraint firstAttribute="trailing" secondItem="8o9-ZO-bdV" secondAttribute="trailing" constant="16" id="keO-L2-LzE"/>
+                            <constraint firstItem="DqO-VQ-2FP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qVb-yr-vzS"/>
                             <constraint firstItem="79R-Zx-v11" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rBN-45-ipk"/>
-                            <constraint firstItem="79R-Zx-v11" firstAttribute="top" secondItem="XDd-ut-0a8" secondAttribute="bottom" constant="7.5" id="rtB-9L-2rL"/>
                             <constraint firstItem="XDd-ut-0a8" firstAttribute="top" secondItem="8o9-ZO-bdV" secondAttribute="bottom" constant="8" id="tNc-b6-96H"/>
                             <constraint firstItem="8o9-ZO-bdV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="w6w-vH-TP2"/>
                         </constraints>
