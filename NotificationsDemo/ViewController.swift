@@ -73,7 +73,7 @@ extension ViewController {
             return content
         }()
         
-        let notificationRequest = UNNotificationRequest(identifier: notificationRequestId, content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false))
+        let notificationRequest = UNNotificationRequest(identifier: notificationRequestId, content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false))
         center.add(notificationRequest) { (error) in
             if let error = error {
                 print("\(error)")
@@ -97,8 +97,8 @@ extension ViewController {
             }
             
             let content = UNMutableNotificationContent()
-            content.title = NSString.localizedUserNotificationString(forKey: "Oh snap!", arguments: nil)
-            content.body = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
+            content.title = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
+            content.body = NSString.localizedUserNotificationString(forKey: "Oh snap!", arguments: nil)
             content.sound = UNNotificationSound.default()
             content.categoryIdentifier = NotificationType.serviceExtension.rawValue
             if let attachment = attachment {
@@ -107,7 +107,7 @@ extension ViewController {
             return content
         }()
         
-        let notificationRequest = UNNotificationRequest(identifier: notificationRequestId, content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false))
+        let notificationRequest = UNNotificationRequest(identifier: notificationRequestId, content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false))
         center.add(notificationRequest) { (error) in
             if let error = error {
                 print("\(error)")
@@ -131,8 +131,8 @@ extension ViewController {
             }
             
             let content = UNMutableNotificationContent()
-            content.title = NSString.localizedUserNotificationString(forKey: "Oh snap!", arguments: nil)
-            content.body = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
+            content.title = NSString.localizedUserNotificationString(forKey: "Here come dat boi!", arguments: nil)
+            content.body = NSString.localizedUserNotificationString(forKey: "Oh snap!", arguments: nil)
             content.sound = UNNotificationSound.default()
             content.categoryIdentifier = NotificationType.contentExtension.rawValue
             if let attachment = attachment {
@@ -141,7 +141,7 @@ extension ViewController {
             return content
         }()
         
-        let notificationRequest = UNNotificationRequest(identifier: notificationRequestId, content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false))
+        let notificationRequest = UNNotificationRequest(identifier: notificationRequestId, content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false))
         center.add(notificationRequest) { (error) in
             if let error = error {
                 print("\(error)")

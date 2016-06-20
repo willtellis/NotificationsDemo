@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqO-VQ-2FP">
-                                <state key="normal" title="Send Notification to Service Extension"/>
+                                <state key="normal" title="Send Notification With Attachment"/>
                                 <connections>
                                     <action selector="sendNotificationToServiceExtension:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nG4-QA-FDF"/>
                                 </connections>
