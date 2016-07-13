@@ -53,7 +53,7 @@ extension AppDelegate {
         
     func registorForNotifications() {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization([.alert, .sound]) { (granted, error) in
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             // Enable or disable features based on authorization.
         }
         center.delegate = self
