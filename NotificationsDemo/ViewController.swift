@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if let delegate = delegate where delegate.datBoiIsComing() {
+        if let delegate = delegate , delegate.datBoiIsComing() {
             showImage()
         }
     }
