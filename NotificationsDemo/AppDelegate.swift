@@ -58,11 +58,24 @@ extension AppDelegate {
         center.delegate = self
         
         let actionWaddup = UNNotificationAction(identifier: ActionType.waddup.rawValue, title: "Waddup", options: [.foreground])
+        let actionHolla = UNNotificationAction(identifier: ActionType.holla.rawValue, title: "Holla", options: [.foreground])
+        let actionYo = UNNotificationAction(identifier: ActionType.yo.rawValue, title: "Yo", options: [.foreground])
+        let actionWord = UNNotificationAction(identifier: ActionType.word.rawValue, title: "Word", options: [.foreground])
+        let actionSup = UNNotificationAction(identifier: ActionType.sup.rawValue, title: "Sup", options: [.foreground])
+        let actions = [actionWaddup, actionHolla, actionYo, actionWord, actionSup]
         let categoryOptions = UNNotificationCategoryOptions(rawValue: 0)
-        let plainCategory = UNNotificationCategory(identifier: NotificationType.plain.rawValue, actions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
-        let serviceExtensionCategory = UNNotificationCategory(identifier: NotificationType.serviceExtension.rawValue, actions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
-        let contentExtensionCategory = UNNotificationCategory(identifier: NotificationType.contentExtension.rawValue, actions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
-        center.setNotificationCategories(Set([plainCategory, serviceExtensionCategory, contentExtensionCategory]))
+//<<<<<<< HEAD
+//        let plainCategory = UNNotificationCategory(identifier: NotificationType.plain.rawValue, actions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+//        let serviceExtensionCategory = UNNotificationCategory(identifier: NotificationType.serviceExtension.rawValue, actions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+//        let contentExtensionCategory = UNNotificationCategory(identifier: NotificationType.contentExtension.rawValue, actions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+//        center.setNotificationCategories(Set([plainCategory, serviceExtensionCategory, contentExtensionCategory]))
+//=======
+        let plainCategory = UNNotificationCategory(identifier: NotificationType.plain.rawValue, actions: actions, intentIdentifiers: [], options: categoryOptions)
+        let serviceExtensionCategory = UNNotificationCategory(identifier: NotificationType.serviceExtension.rawValue, actions: actions, intentIdentifiers: [], options: categoryOptions)
+        let contentExtensionCategory = UNNotificationCategory(identifier: NotificationType.contentExtension.rawValue, actions: actions, intentIdentifiers: [], options: categoryOptions)
+        let animatedContentExtensionCategory = UNNotificationCategory(identifier: NotificationType.animatedContentExtension.rawValue, actions: actions, intentIdentifiers: [], options: categoryOptions)
+        center.setNotificationCategories(Set([plainCategory, serviceExtensionCategory, contentExtensionCategory, animatedContentExtensionCategory]))
+//>>>>>>> a126a57... Exercise capabilities
         
     }
     
@@ -77,7 +90,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
         
         switch action {
-        case .waddup:
+        case .waddup, .holla, .yo, .word, .sup:
             if let viewController = window?.rootViewController as? ViewController {
                 viewController.showImage()
             }
