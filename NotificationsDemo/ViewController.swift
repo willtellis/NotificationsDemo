@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
     
-    weak var delegate = UIApplication.shared().delegate as? DatBoiProtocol
+    weak var delegate = UIApplication.shared.delegate as? DatBoiProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if let delegate = delegate where delegate.datBoiIsComing() {
+        if let delegate = delegate , delegate.datBoiIsComing() {
             showImage()
         }
     }

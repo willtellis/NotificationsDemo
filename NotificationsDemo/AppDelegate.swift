@@ -15,9 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var shouldShowImage = false
     
     var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         registorForNotifications()
         
         return true
@@ -53,16 +52,16 @@ extension AppDelegate {
         
     func registorForNotifications() {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization([.alert, .sound]) { (granted, error) in
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             // Enable or disable features based on authorization.
         }
         center.delegate = self
         
         let actionWaddup = UNNotificationAction(identifier: ActionType.waddup.rawValue, title: "Waddup", options: [.foreground])
         let categoryOptions = UNNotificationCategoryOptions(rawValue: 0)
-        let plainCategory = UNNotificationCategory(identifier: NotificationType.plain.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
-        let serviceExtensionCategory = UNNotificationCategory(identifier: NotificationType.serviceExtension.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
-        let contentExtensionCategory = UNNotificationCategory(identifier: NotificationType.contentExtension.rawValue, actions: [actionWaddup], minimalActions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+        let plainCategory = UNNotificationCategory(identifier: NotificationType.plain.rawValue, actions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+        let serviceExtensionCategory = UNNotificationCategory(identifier: NotificationType.serviceExtension.rawValue, actions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
+        let contentExtensionCategory = UNNotificationCategory(identifier: NotificationType.contentExtension.rawValue, actions: [actionWaddup], intentIdentifiers: [], options: categoryOptions)
         center.setNotificationCategories(Set([plainCategory, serviceExtensionCategory, contentExtensionCategory]))
         
     }
@@ -71,7 +70,7 @@ extension AppDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void) {
         guard let action = ActionType(rawValue: response.actionIdentifier) else {
             completionHandler()
             return
@@ -89,7 +88,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert])
     }
 }

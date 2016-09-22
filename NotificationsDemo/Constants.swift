@@ -39,9 +39,9 @@ enum MediaType {
     func url() -> URL {
         switch self {
         case .datBoiThumbnail:
-            return Bundle.main().urlForResource("datboi", withExtension: "png")!
+            return Bundle.main.url(forResource:"datboi", withExtension: "png")!
         case .datBoiFullLocal:
-            return Bundle.main().urlForResource("datboi", withExtension: "gif")!
+            return Bundle.main.url(forResource:"datboi", withExtension: "gif")!
         case .datBoiFullRemote:
             return URL(string: "https://i.giphy.com/yDTWAecZcB2Jq.gif")!
         }
