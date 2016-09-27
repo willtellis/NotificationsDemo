@@ -11,7 +11,7 @@ import UserNotifications
 import UserNotificationsUI
 
 class AnimatedNotificationViewController: UIViewController, UNNotificationContentExtension {
-
+    
     @IBOutlet var label: UILabel?
     @IBOutlet var labelHorizontalCenterConstraint: NSLayoutConstraint!
     
@@ -23,26 +23,19 @@ class AnimatedNotificationViewController: UIViewController, UNNotificationConten
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let complete = { [weak self] (result: Bool) -> Void in
-            UIView.animate(withDuration: 10, animations: { [weak self] in
-                self?.labelHorizontalCenterConstraint.constant = -150
-                })
-        }
         
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: 10000000000)) {
-            UIView.animate(withDuration: 10, animations: { [weak self] in
-                self?.labelHorizontalCenterConstraint.constant = 50
-                }, completion: complete)
-            
-        }
         
-//        UIView.animate(withDuration: 5) { [weak self] in
-//            self?.labelHorizontalCenterConstraint.constant = 20
-//        }
+        UIView.animate(withDuration: 1, animations: {
+            self.label?.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+        }, completion: nil)
+        
+        
     }
+    
+    
     func didReceive(_ notification: UNNotification) {
-        self.label?.text = notification.request.content.body
+        self.label?.text = "YES!"
     }
-
+    
 }
